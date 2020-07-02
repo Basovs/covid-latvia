@@ -20,38 +20,38 @@ const fetcher = (...args) =>
     fetch(...args, {
         method: "GET",
         headers: {
+            "x-rapidapi-host": "covid-193.p.rapidapi.com",
             "x-rapidapi-key":
                 "86bf3463b7mshd48a8642e3877b1p14f8c5jsn8fe7a3629fb2",
         },
     }).then(res => res.json());
 
 export default function Home() {
-    const url =
-        "https://covid-19-data.p.rapidapi.com/country?format=json&name=latvia";
+    const url = "https://covid-193.p.rapidapi.com/statistics?country=latvia";
 
     const { data, error } = useSWR(url, fetcher);
     if (error) return <div>failed to load</div>;
     if (!data) return <div>loading...</div>;
-    console.log(data[0].deaths);
+    console.log(data.response[0]);
     return (
         <Wrapper>
             <Head>
-                <title>Covid-Latvia</title>
+                <title>Covid-{data.response[0].country}</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <Main>
-                <h1>Covid Latvia</h1>
-                <h2>Līdz šim apstiprināti gadījumi</h2>
-                <Code>{data[0].confirmed}</Code>
-                <h2>Nāves atgadījumi</h2>
-                <Code>{data[0].deaths}</Code>
-                <h2>Izveseļojušies</h2>
-                <Code>{data[0].recovered}</Code>
-                <h2>Vēl slimo</h2>
-                <Code>
-                    {data[0].confirmed - (data[0].recovered + data[0].deaths)}
-                </Code>
+                <h1>Covid - {data.response[0].country}</h1>
+
+                <h2>Atjaunots - {data.response[0].day}</h2>
+                <h3>Līdz šim apstiprināti gadījumi</h3>
+                <Code>{data.response[0].cases.total}</Code>
+                <h3>Nomiruši</h3>
+                <Code>{data.response[0].deaths.total}</Code>
+                <h3>Izveseļojušies</h3>
+                <Code>{data.response[0].cases.recovered}</Code>
+                <h3>Vēl slimo</h3>
+                <Code>{data.response[0].cases.active}</Code>
             </Main>
 
             <style jsx global>{`
