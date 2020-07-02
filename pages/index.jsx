@@ -32,7 +32,7 @@ export default function Home() {
     const { data, error } = useSWR(url, fetcher);
     if (error) return <div>failed to load</div>;
     if (!data) return <div>loading...</div>;
-    console.log(data.response[0]);
+    // console.log(data.response[0]);
     return (
         <Wrapper>
             <Head>
