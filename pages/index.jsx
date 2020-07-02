@@ -18,8 +18,8 @@ import useSWR from "swr";
 
 const fetcher = (...args) =>
     fetch(...args, {
+        method: "GET",
         headers: {
-            "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
             "x-rapidapi-key":
                 "86bf3463b7mshd48a8642e3877b1p14f8c5jsn8fe7a3629fb2",
         },
