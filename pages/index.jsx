@@ -80,7 +80,9 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: center;
 `;
-const Main = styled.main``;
+const Main = styled.main`
+    text-align: center;
+`;
 const Code = styled.div`
     background: #fafafa;
     border-radius: 5px;
@@ -88,5 +90,4 @@ const Code = styled.div`
     font-size: 2rem;
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
         DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-    text-align: center;
 `;
