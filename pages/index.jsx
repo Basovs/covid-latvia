@@ -42,8 +42,8 @@ export default function Home() {
 
             <Main>
                 <h1>Covid - {data.response[0].country}</h1>
-
                 <h2>Atjaunots - {data.response[0].day}</h2>
+                <br />
                 <h3>Līdz šim apstiprināti gadījumi</h3>
                 <Code>{data.response[0].cases.total}</Code>
                 <h3>Nomiruši</h3>
