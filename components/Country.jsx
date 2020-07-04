@@ -25,6 +25,7 @@ class Country extends React.Component {
           </Head>
           <h1>Covid - {data[67].country}</h1>
           <h2>Atjaunots - {data[67].day}</h2>
+          <p>Statistika atjaunojas 1x dienā.</p>
           <h3>Līdz šim apstiprināti gadījumi</h3>
           <Code>{data[67].cases.total}</Code>
           <h3>Miruši</h3>
@@ -44,6 +45,7 @@ class Country extends React.Component {
           </Head>
           <h1>Covid - {data[14].country}</h1>
           <h2>Atjaunots - {data[14].day}</h2>
+          <p>Statistika atjaunojas 1x dienā.</p>
           <h3>Līdz šim apstiprināti gadījumi</h3>
           <Code>{data[14].cases.total}</Code>
           <h3>Miruši</h3>
@@ -63,6 +65,7 @@ class Country extends React.Component {
           </Head>
           <h1>Covid - {data[3].country}</h1>
           <h2>Atjaunots - {data[3].day}</h2>
+          <p>Statistika atjaunojas 1x dienā.</p>
           <h3>Līdz šim apstiprināti gadījumi</h3>
           <Code>{data[3].cases.total}</Code>
           <h3>Miruši</h3>
