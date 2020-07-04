@@ -20,10 +20,10 @@ class Country extends React.Component {
       statistics = (
         <div>
           <Head>
-            <title>Covid-{data[67].country}</title>
+            <title>Covid19 - {data[67].country}</title>
             <link rel="icon" href="/favicon.ico" />
           </Head>
-          <h1>Covid - {data[67].country}</h1>
+          <h1>Covid19 - {data[67].country}</h1>
           <p>Atjaunots - {data[67].day}. Statistika atjaunojas 1x dienā.</p>
           <article></article>
 
@@ -52,10 +52,10 @@ class Country extends React.Component {
       statistics = (
         <div>
           <Head>
-            <title>Covid-{data[14].country}</title>
+            <title>Covid19 - {data[14].country}</title>
             <link rel="icon" href="/favicon.ico" />
           </Head>
-          <h1>Covid - {data[14].country}</h1>
+          <h1>Covid19 - {data[14].country}</h1>
           <p>Atjaunots - {data[14].day}. Statistika atjaunojas 1x dienā.</p>
 
           <Article>
@@ -80,10 +80,10 @@ class Country extends React.Component {
       statistics = (
         <div>
           <Head>
-            <title>Covid-{data[3].country}</title>
+            <title>Covid19 - {data[3].country}</title>
             <link rel="icon" href="/favicon.ico" />
           </Head>
-          <h1>Covid - {data[3].country}</h1>
+          <h1>Covid19 - {data[3].country}</h1>
           <p>Atjaunots - {data[3].day}. Statistika atjaunojas 1x dienā.</p>
 
           <Article>
@@ -131,7 +131,7 @@ class Country extends React.Component {
 export default Country;
 const Statistics = styled.div`
   p {
-    color: #9b9b9b;
+    color: #7f7f7f;
   }
 `;
 const Article = styled.article`
@@ -146,7 +146,7 @@ const Article = styled.article`
 
 const Code = styled.div`
   display: inline-block;
-  background: #fafafa;
+  background: #f3f3f3;
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.3rem;
@@ -157,7 +157,7 @@ const Code = styled.div`
 const Select = styled.select`
   outline: none;
   inline-size: 100%;
-  background: #fafafa;
+  background: #f3f3f3;
   border-radius: 5px;
   border: none;
   padding: 0.75rem;
@@ -169,6 +169,7 @@ const Select = styled.select`
   option {
     cursor: pointer;
     border: none;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: bold;
   }
 `;
