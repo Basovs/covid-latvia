@@ -19,6 +19,10 @@ class Country extends React.Component {
     if (this.state.country === "latvia") {
       statistics = (
         <div>
+          <Head>
+            <title>Covid-{data[67].country}</title>
+            <link rel="icon" href="/favicon.ico" />
+          </Head>
           <h1>Covid - {data[67].country}</h1>
           <h2>Atjaunots - {data[67].day}</h2>
           <h3>Līdz šim apstiprināti gadījumi</h3>
@@ -34,6 +38,10 @@ class Country extends React.Component {
     } else if (this.state.country === "sweden") {
       statistics = (
         <div>
+          <Head>
+            <title>Covid-{data[14].country}</title>
+            <link rel="icon" href="/favicon.ico" />
+          </Head>
           <h1>Covid - {data[14].country}</h1>
           <h2>Atjaunots - {data[14].day}</h2>
           <h3>Līdz šim apstiprināti gadījumi</h3>
@@ -49,6 +57,10 @@ class Country extends React.Component {
     } else if (this.state.country === "usa") {
       statistics = (
         <div>
+          <Head>
+            <title>Covid-{data[3].country}</title>
+            <link rel="icon" href="/favicon.ico" />
+          </Head>
           <h1>Covid - {data[3].country}</h1>
           <h2>Atjaunots - {data[3].day}</h2>
           <h3>Līdz šim apstiprināti gadījumi</h3>
@@ -65,10 +77,6 @@ class Country extends React.Component {
 
     return (
       <div state={this.state}>
-        <Head>
-          <title>Covid-Test</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
         <select
           name="pickCountry"
           id="pickCountry"
