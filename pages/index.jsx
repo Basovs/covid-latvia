@@ -71,6 +71,4 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const Main = styled.main`
-  text-align: center;
-`;
+const Main = styled.main``;
