@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styled from "styled-components";
-import useSWR from "swr";
+// import React, { Component } from "react";
+// import useSWR from "swr";
 
 // Fetching data from a API - with useSWR
 // const fetcher = (...args) =>
@@ -25,22 +26,6 @@ const changeCountry = e => {
         "https://covid-193.p.rapidapi.com/statistics?country=" + choosenCountry;
     console.log("Your New url " + url);
 };
-
-export async function getServerSideProps() {
-    const res = await fetch(url, {
-        method: "GET",
-        headers: {
-            "x-rapidapi-host": "covid-193.p.rapidapi.com",
-            "x-rapidapi-key":
-                "86bf3463b7mshd48a8642e3877b1p14f8c5jsn8fe7a3629fb2",
-        },
-    });
-    const data = await res.json();
-
-    return {
-        props: data,
-    };
-}
 
 // Components
 export default function Home({ data }) {
@@ -121,3 +106,19 @@ const Code = styled.div`
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
         DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 `;
+
+export async function getServerSideProps() {
+    const res = await fetch(url, {
+        method: "GET",
+        headers: {
+            "x-rapidapi-host": "covid-193.p.rapidapi.com",
+            "x-rapidapi-key":
+                "86bf3463b7mshd48a8642e3877b1p14f8c5jsn8fe7a3629fb2",
+        },
+    });
+    const data = await res.json();
+
+    return {
+        props: data,
+    };
+}
