@@ -22,6 +22,20 @@ class Country extends React.Component {
           <Head>
             <title>Covid19 - {data[67].country}</title>
             <link rel="icon" href="/favicon.ico" />
+            <meta
+              name="description"
+              content="COVID19 statistics COVID-19 statistics"
+            />
+            <meta
+              name="keywords"
+              content="COVID19, COVID-19, covid19, covid-19, Covid19, Covid-19, Statistics, statistics, Sweden, sweden, Latvia, latvia, Latvija, latvija, Sverige, sverige, USA, usa"
+            />
+            <meta name="author" content="Janis Basis Basovs" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0"
+            />
+            <meta name="robots" content="index" />
           </Head>
           <h1>Covid19 - {data[67].country}</h1>
           <p>Atjaunots - {data[67].day}. Statistika atjaunojas 1x dienā.</p>
@@ -54,6 +68,20 @@ class Country extends React.Component {
           <Head>
             <title>Covid19 - {data[14].country}</title>
             <link rel="icon" href="/favicon.ico" />
+            <meta
+              name="description"
+              content="COVID19 statistics COVID-19 statistics"
+            />
+            <meta
+              name="keywords"
+              content="COVID19, COVID-19, covid19, covid-19, Covid19, Covid-19, Statistics, statistics, Sweden, sweden, Latvia, latvia, Latvija, latvija, Sverige, sverige, USA, usa"
+            />
+            <meta name="author" content="Janis Basis Basovs" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0"
+            />
+            <meta name="robots" content="index" />
           </Head>
           <h1>Covid19 - {data[14].country}</h1>
           <p>Atjaunots - {data[14].day}. Statistika atjaunojas 1x dienā.</p>
@@ -82,6 +110,20 @@ class Country extends React.Component {
           <Head>
             <title>Covid19 - {data[3].country}</title>
             <link rel="icon" href="/favicon.ico" />
+            <meta
+              name="description"
+              content="COVID19 statistics COVID-19 statistics"
+            />
+            <meta
+              name="keywords"
+              content="COVID19, COVID-19, covid19, covid-19, Covid19, Covid-19, Statistics, statistics, Sweden, sweden, Latvia, latvia, Latvija, latvija, Sverige, sverige, USA, usa"
+            />
+            <meta name="author" content="Janis Basis Basovs" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0"
+            />
+            <meta name="robots" content="index" />
           </Head>
           <h1>Covid19 - {data[3].country}</h1>
           <p>Atjaunots - {data[3].day}. Statistika atjaunojas 1x dienā.</p>
@@ -109,6 +151,7 @@ class Country extends React.Component {
     return (
       <Statistics state={this.state}>
         {statistics}
+        <Label htmlFor="pickCountry">Izvēlies valsti</Label>
         <Select
           name="pickCountry"
           id="pickCountry"
@@ -131,7 +174,7 @@ class Country extends React.Component {
 export default Country;
 const Statistics = styled.div`
   p {
-    color: #7f7f7f;
+    color: #4b4b4b;
   }
 `;
 const Article = styled.article`
@@ -141,6 +184,7 @@ const Article = styled.article`
   h2 {
     margin: 10px 0 18px 0.75rem;
     font-size: 1.2rem;
+    font-weight: 500;
   }
 `;
 
@@ -153,7 +197,9 @@ const Code = styled.div`
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
 `;
-
+const Label = styled.label`
+  font-weight: 500;
+`;
 const Select = styled.select`
   outline: none;
   inline-size: 100%;
