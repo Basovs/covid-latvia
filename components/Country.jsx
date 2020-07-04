@@ -1,21 +1,21 @@
-import styled from "styled-components"
-import Head from "next/head"
+import styled from "styled-components";
+import Head from "next/head";
 
 class Country extends React.Component {
   state = {
-    country: "usa",
-  }
+    country: "latvia",
+  };
 
   render() {
     // const dataObj = JSON.parse(this.props.data.response)
-    const data = this.props.data
+    const data = this.props.data;
 
     // console.log("Before data")
     // console.log(data[67].country) /* Latvia */
     // console.log(data[14].country) /* Sweden */
     // console.log(data[3].country) /* USA */
 
-    let statistics = ""
+    let statistics = "";
     if (this.state.country === "latvia") {
       statistics = (
         <div>
@@ -34,7 +34,7 @@ class Country extends React.Component {
           <h3>Vēl slimo</h3>
           <Code>{data[67].cases.active}</Code>
         </div>
-      )
+      );
     } else if (this.state.country === "sweden") {
       statistics = (
         <div>
@@ -53,7 +53,7 @@ class Country extends React.Component {
           <h3>Vēl slimo</h3>
           <Code>{data[14].cases.active}</Code>
         </div>
-      )
+      );
     } else if (this.state.country === "usa") {
       statistics = (
         <div>
@@ -72,7 +72,7 @@ class Country extends React.Component {
           <h3>Vēl slimo</h3>
           <Code>{data[3].cases.active}</Code>
         </div>
-      )
+      );
     }
 
     return (
@@ -80,8 +80,11 @@ class Country extends React.Component {
         <select
           name="pickCountry"
           id="pickCountry"
-          onChange={(e) => {
-            this.setState({ country: e.target.value }, console.log(e.target.value))
+          onChange={e => {
+            this.setState(
+              { country: e.target.value },
+              console.log(e.target.value)
+            );
           }}
         >
           <option value="latvia">Latvia</option>
@@ -90,11 +93,11 @@ class Country extends React.Component {
         </select>
         {statistics}
       </div>
-    )
+    );
   }
 }
 
-export default Country
+export default Country;
 
 const Code = styled.div`
   background: #fafafa;
@@ -103,4 +106,4 @@ const Code = styled.div`
   font-size: 1.5rem;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
-`
+`;
