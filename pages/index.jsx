@@ -1,36 +1,26 @@
 import Head from "next/head";
 import styled from "styled-components";
-// import React, { Component } from "react";
-// import useSWR from "swr";
+import useSWR from "swr";
+
+import Country from "../components/Country";
+
+let url = "https://covid-193.p.rapidapi.com/statistics?country=latvia";
 
 // Fetching data from a API - with useSWR
-// const fetcher = (...args) =>
-//     fetch(...args, {
-//         method: "GET",
-//         headers: {
-//             "x-rapidapi-host": "covid-193.p.rapidapi.com",
-//             "x-rapidapi-key":
-//                 "86bf3463b7mshd48a8642e3877b1p14f8c5jsn8fe7a3629fb2",
-//         },
-//     }).then(res => res.json());
-
-// Logic
-let choosenCountry = "latvia";
-let url =
-    "https://covid-193.p.rapidapi.com/statistics?country=" + choosenCountry;
-const changeCountry = e => {
-    const myValue = e.target.value;
-    console.log("Country picked " + myValue);
-    choosenCountry = myValue;
-    url =
-        "https://covid-193.p.rapidapi.com/statistics?country=" + choosenCountry;
-    console.log("Your New url " + url);
-};
+const fetcher = (...args) =>
+    fetch(...args, {
+        method: "GET",
+        headers: {
+            "x-rapidapi-host": "covid-193.p.rapidapi.com",
+            "x-rapidapi-key":
+                "86bf3463b7mshd48a8642e3877b1p14f8c5jsn8fe7a3629fb2",
+        },
+    }).then(res => res.json());
 
 // Components
-export default function Home({ data }) {
-    // const { data, error } = useSWR(url, fetcher);
-    // if (error) return <div>failed to load</div>;
+const Index = () => {
+    const { data, error } = useSWR(url, fetcher);
+    if (error) return <div>failed to load</div>;
     if (!data)
         return (
             <Wrapper>
@@ -38,19 +28,21 @@ export default function Home({ data }) {
             </Wrapper>
         );
     // console.log(props.data); <<<<<--------------------------------------------------------------------------- console.log()
-    // console.log(data);
+    console.log(data.response[0]);
+    console.log("janis");
     return (
         <Wrapper>
             <Head>
-                <title>Covid-{data.country}</title>
+                <title>Covid-{data.response[0].country}</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <Main>
-                <h1>Covid - {data.country}</h1>
+                <Country data={data.response[0].country} />
+                <h1>Covid - {data.response[0].country}</h1>
                 <h2>Atjaunots - {data.day}</h2>
                 <br />
-                <select
+                {/* <select
                     name="pickCountry"
                     id="pickCountry"
                     onChange={changeCountry}
@@ -58,15 +50,15 @@ export default function Home({ data }) {
                     <option value="latvia">Latvia</option>
                     <option value="sweden">Sweden</option>
                     <option value="usa">USA</option>
-                </select>
+                </select> */}
                 <h3>Līdz šim apstiprināti gadījumi</h3>
-                <Code>{data.cases.total}</Code>
+                <Code>{data.response[0].cases.total}</Code>
                 <h3>Nomiruši</h3>
-                <Code>{data.deaths.total}</Code>
+                <Code>{data.response[0].deaths.total}</Code>
                 <h3>Izveseļojušies</h3>
-                <Code>{data.cases.recovered}</Code>
+                <Code>{data.response[0].cases.recovered}</Code>
                 <h3>Vēl slimo</h3>
-                <Code>{data.cases.active}</Code>
+                <Code>{data.response[0].cases.active}</Code>
             </Main>
 
             <style jsx global>{`
@@ -85,7 +77,9 @@ export default function Home({ data }) {
             `}</style>
         </Wrapper>
     );
-}
+};
+
+export default Index;
 
 const Wrapper = styled.div`
     min-height: 100vh;
@@ -107,18 +101,31 @@ const Code = styled.div`
         DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 `;
 
-export async function getServerSideProps() {
-    const res = await fetch(url, {
-        method: "GET",
-        headers: {
-            "x-rapidapi-host": "covid-193.p.rapidapi.com",
-            "x-rapidapi-key":
-                "86bf3463b7mshd48a8642e3877b1p14f8c5jsn8fe7a3629fb2",
-        },
-    });
-    const data = await res.json();
+// export async function getServerSideProps() {
+//     const res = await fetch(url, {
+//         method: "GET",
+//         headers: {
+//             "x-rapidapi-host": "covid-193.p.rapidapi.com",
+//             "x-rapidapi-key":
+//                 "86bf3463b7mshd48a8642e3877b1p14f8c5jsn8fe7a3629fb2",
+//         },
+//     });
+//     const data = await res.json();
 
-    return {
-        props: data,
-    };
-}
+//     return {
+//         props: data,
+//     };
+// }
+
+// Logic for Select box
+// let choosenCountry = "latvia";
+// let url =
+//     "https://covid-193.p.rapidapi.com/statistics?country=" + choosenCountry;
+// const changeCountry = e => {
+//     const myValue = e.target.value;
+//     console.log("Country picked " + myValue);
+//     choosenCountry = myValue;
+//     url =
+//         "https://covid-193.p.rapidapi.com/statistics?country=" + choosenCountry;
+//     console.log("Your New url " + url);
+// };
