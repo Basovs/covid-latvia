@@ -35,6 +35,7 @@ const Index = () => {
   return (
     <Wrapper>
       <Head>
+        <title>Covid19 - Statistics</title>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
