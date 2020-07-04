@@ -77,20 +77,20 @@ class Country extends React.Component {
 
     return (
       <div state={this.state}>
-        <select
+        <Select
           name="pickCountry"
           id="pickCountry"
           onChange={e => {
             this.setState(
-              { country: e.target.value },
-              console.log(e.target.value)
+              { country: e.target.value }
+              // console.log(e.target.value)
             );
           }}
         >
           <option value="latvia">Latvia</option>
           <option value="sweden">Sweden</option>
           <option value="usa">USA</option>
-        </select>
+        </Select>
         {statistics}
       </div>
     );
@@ -106,4 +106,8 @@ const Code = styled.div`
   font-size: 1.5rem;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
+`;
+
+const Select = styled.select`
+  font-size: 16px;
 `;
