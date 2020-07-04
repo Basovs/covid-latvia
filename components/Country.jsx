@@ -21,21 +21,6 @@ class Country extends React.Component {
         <div>
           <Head>
             <title>Covid19 - {data[67].country}</title>
-            <link rel="icon" href="/favicon.ico" />
-            <meta
-              name="description"
-              content="COVID19 statistics COVID-19 statistics"
-            />
-            <meta
-              name="keywords"
-              content="COVID19, COVID-19, covid19, covid-19, Covid19, Covid-19, Statistics, statistics, Sweden, sweden, Latvia, latvia, Latvija, latvija, Sverige, sverige, USA, usa"
-            />
-            <meta name="author" content="Janis Basis Basovs" />
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1.0"
-            />
-            <meta name="robots" content="index" />
           </Head>
           <h1>Covid19 - {data[67].country}</h1>
           <p>Atjaunots - {data[67].day}. Statistika atjaunojas 1x dienā.</p>
@@ -67,21 +52,6 @@ class Country extends React.Component {
         <div>
           <Head>
             <title>Covid19 - {data[14].country}</title>
-            <link rel="icon" href="/favicon.ico" />
-            <meta
-              name="description"
-              content="COVID19 statistics COVID-19 statistics"
-            />
-            <meta
-              name="keywords"
-              content="COVID19, COVID-19, covid19, covid-19, Covid19, Covid-19, Statistics, statistics, Sweden, sweden, Latvia, latvia, Latvija, latvija, Sverige, sverige, USA, usa"
-            />
-            <meta name="author" content="Janis Basis Basovs" />
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1.0"
-            />
-            <meta name="robots" content="index" />
           </Head>
           <h1>Covid19 - {data[14].country}</h1>
           <p>Atjaunots - {data[14].day}. Statistika atjaunojas 1x dienā.</p>
@@ -109,21 +79,6 @@ class Country extends React.Component {
         <div>
           <Head>
             <title>Covid19 - {data[3].country}</title>
-            <link rel="icon" href="/favicon.ico" />
-            <meta
-              name="description"
-              content="COVID19 statistics COVID-19 statistics"
-            />
-            <meta
-              name="keywords"
-              content="COVID19, COVID-19, covid19, covid-19, Covid19, Covid-19, Statistics, statistics, Sweden, sweden, Latvia, latvia, Latvija, latvija, Sverige, sverige, USA, usa"
-            />
-            <meta name="author" content="Janis Basis Basovs" />
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1.0"
-            />
-            <meta name="robots" content="index" />
           </Head>
           <h1>Covid19 - {data[3].country}</h1>
           <p>Atjaunots - {data[3].day}. Statistika atjaunojas 1x dienā.</p>
