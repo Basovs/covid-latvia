@@ -109,5 +109,17 @@ const Code = styled.div`
 `;
 
 const Select = styled.select`
-  font-size: 16px;
+  inline-size: 100%;
+  background: #fafafa;
+  border-radius: 5px;
+  border: none;
+  padding: 0.75rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+  option {
+    cursor: pointer;
+    border: none;
+  }
 `;
