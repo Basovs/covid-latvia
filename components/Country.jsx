@@ -11,8 +11,8 @@ class Country extends React.Component {
     const data = this.props.data
 
     // console.log("Before data")
-    // console.log(data[110].country) /* Latvia */
-    // console.log(data[26].country) /* Sweden */
+    // console.log(data[112].country) /* Latvia */
+    // console.log(data[25].country) /* Sweden */
     // console.log(data[1].country) /* USA */
     // console.log(data[19].country) /* Visaa pasaulee */
 
@@ -21,30 +21,35 @@ class Country extends React.Component {
       statistics = (
         <div>
           <Head>
-            <title>Covid19 - {data[110].country}</title>
+            <title>Covid19 - {data[112].country}</title>
           </Head>
-          <h1>Covid19 - {data[110].country}</h1>
-          <p>Atjaunots - {data[110].day}. Statistika atjaunojas 1x dienā.</p>
+          <h1>Covid19 - {data[112].country}</h1>
+          <p>Atjaunots - {data[112].day}. Statistika atjaunojas 1x dienā.</p>
           <article></article>
 
           <Article>
             <h2>Līdz šim apstiprināti gadījumi</h2>
-            <Code>{data[110].cases.total}</Code>
+            <Code>{data[112].cases.total}</Code>
           </Article>
 
           <Article>
             <h2>Miruši</h2>
-            <Code>{data[110].deaths.total}</Code>
+            <Code>{data[112].deaths.total}</Code>
           </Article>
 
           <Article>
             <h2>Izveseļojušies</h2>
-            <Code>{data[110].cases.recovered}</Code>
+            <Code>{data[112].cases.recovered}</Code>
           </Article>
 
           <Article>
             <h2>Vēl slimo</h2>
-            <Code>{data[110].cases.active}</Code>
+            <Code>{data[112].cases.active}</Code>
+          </Article>
+
+          <Article>
+            <h2>Miruši</h2>
+            <Code>{data[112].deaths.new}</Code>
           </Article>
         </div>
       )
@@ -52,26 +57,30 @@ class Country extends React.Component {
       statistics = (
         <div>
           <Head>
-            <title>Covid19 - {data[26].country}</title>
+            <title>Covid19 - {data[25].country}</title>
           </Head>
-          <h1>Covid19 - {data[26].country}</h1>
-          <p>Atjaunots - {data[26].day}. Statistika atjaunojas 1x dienā.</p>
+          <h1>Covid19 - {data[25].country}</h1>
+          <p>Atjaunots - {data[25].day}. Statistika atjaunojas 1x dienā.</p>
 
           <Article>
             <h2>Līdz šim apstiprināti gadījumi</h2>
-            <Code>{data[26].cases.total}</Code>
+            <Code>{data[25].cases.total}</Code>
           </Article>
           <Article>
             <h2>Miruši</h2>
-            <Code>{data[26].deaths.total}</Code>
+            <Code>{data[25].deaths.total}</Code>
           </Article>
           <Article>
             <h2>Izveseļojušies</h2>
-            <Code>{data[26].cases.recovered}</Code>
+            <Code>{data[25].cases.recovered}</Code>
           </Article>
           <Article>
             <h2>Vēl slimo</h2>
-            <Code>{data[26].cases.active}</Code>
+            <Code>{data[25].cases.active}</Code>
+          </Article>
+          <Article>
+            <h2>Miruši</h2>
+            <Code>{data[25].deaths.new}</Code>
           </Article>
         </div>
       )
@@ -99,6 +108,10 @@ class Country extends React.Component {
           <Article>
             <h2>Vēl slimo</h2>
             <Code>{data[1].cases.active}</Code>
+          </Article>
+          <Article>
+            <h2>Miruši</h2>
+            <Code>{data[1].deaths.new}</Code>
           </Article>
         </div>
       )
